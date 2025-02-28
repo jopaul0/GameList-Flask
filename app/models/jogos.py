@@ -26,4 +26,12 @@ class Jogos:
                 if len(dados) == 4:
                     jogos.append(Jogos(dados[0], dados[1], dados[2], dados[3]))
         return jogos
+    
+    #Adiciona um jogo ao banco de dados
+    def adicionar(ano, nome, descricao, plataforma):
+        #Abre o arquivo em modo de escrita
+        with open(DB_PATH, "a", encoding="utf-8") as file:
+            #Escreve o jogo no arquivo
+            file.write(f"{ano};{nome};{descricao};{plataforma}\n")
+        return True
              
