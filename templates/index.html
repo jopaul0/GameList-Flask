@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Jogos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/style.css') }}">
+</head>
+<body>
+    <h1>🎮 Lista de Jogos</h1>
+
+    <table>
+        <tr>
+            <th>Ano</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Console</th>
+        </tr>
+        {% for jogo in jogos %}
+        <tr>
+            <td>{{ jogo.ano }}</td>
+            <td>{{ jogo.nome }}</td>
+            <td>{{ jogo.descricao }}</td>
+            <td>{{ jogo.plataforma }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
