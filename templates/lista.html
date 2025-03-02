@@ -1,0 +1,41 @@
+{% extends "template.html" %} {% block content %}
+<h1 class="titulo">🎮 Lista de Jogos</h1>
+
+<table>
+  <tr>
+    <th>Ano</th>
+    <th>Nome</th>
+    <th>Descrição</th>
+    <th>Console</th>
+    <th>Imagem</th>  <!-- Nova coluna para Imagem -->
+    <th>Gênero</th>  <!-- Nova coluna para Gênero -->
+  </tr>
+  <tbody id="jogos-tuplas">
+    {% for jogo in jogos %}
+    <tr>
+      <td>{{ jogo.ano_lancamento }}</td>
+      <td>{{ jogo.nome }}</td>
+      <td>{{ jogo.descricao }}</td>
+      <td>{{ jogo.plataforma }}</td>
+      <td><img src="{{ jogo.foto }}" alt="Imagem do jogo" width="50" height="50"></td> <!-- Exibindo imagem -->
+      <td>{{ jogo.genero }}</td>  <!-- Exibindo gênero -->
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h1 class="titulo">Adicionar um novo jogo</h1>
+<form action="post" id="add-jogo">
+  <label for="ano">Ano:</label>
+  <input type="text" id="ano" name="ano" required />
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" name="nome" required />
+  <label for="descricao">Descrição:</label>
+  <input type="text" id="descricao" name="descricao" required />
+  <label for="plataforma">Console:</label>
+  <input type="text" id="plataforma" name="plataforma" required />
+  <button type="submit">Adicionar</button>
+</form>
+
+<script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+{% endblock %}

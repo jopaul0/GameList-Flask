@@ -1,9 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    text-align: center;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
 h1, h2 {
@@ -63,4 +61,80 @@ button {
 
 button:hover {
     background-color: #218838;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li {
+    display: inline;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.titulo {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilos para as colunas de Imagem e Gênero */
+table img {
+    width: 50px; /* Tamanho da imagem */
+    height: 50px; /* Tamanho da imagem */
+    object-fit: cover; /* Garantir que a imagem se ajuste bem */
+    border-radius: 5px; /* Bordas arredondadas nas imagens */
+}
+
+table td, table th {
+    text-align: center; /* Centralizando o texto nas células */
+}
+
+table th:nth-child(5), table td:nth-child(5) {
+    width: 100px; /* Controlando a largura da coluna de Imagem */
+}
+
+table th:nth-child(6), table td:nth-child(6) {
+    width: 150px; /* Controlando a largura da coluna de Gênero */
+}
+
+.content {
+    width: 80%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+ul {
+    padding-left: 20px;
+}
+ul li {
+    margin-bottom: 10px;
 }

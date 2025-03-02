@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogoteca</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='stylesheet/style.css') }}"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Jogoteca</div>
+      <ul class="menu">
+        <li><a href="/lista">Jogos</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="/sobre">Sobre</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+    {% block content %} {% endblock %}
+  </body>
+</html>

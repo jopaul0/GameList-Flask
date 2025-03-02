@@ -2,10 +2,19 @@ from app import app
 from app.controllers.jogos_controller import *
 from flask import render_template, request, redirect, url_for, jsonify
 
+
 @app.route("/")
+def home():
+    return render_template("index.html")
+
+@app.route("/sobre")
+def sobre():
+    return render_template("sobre.html")
+
+@app.route("/lista")
 def index():
     jogos = obter_jogos()
-    return render_template("index.html", jogos=jogos)
+    return render_template("lista.html", jogos=jogos)
 
 
 @app.route('/adicionar', methods=['POST'])
