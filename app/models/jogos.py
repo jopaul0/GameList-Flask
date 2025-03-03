@@ -1,7 +1,6 @@
-from app.models.database import Database
+from app.models.database import *
 
-#Rota do banco de dados
-DB_PATH = "data/jogos.db"
+
 
 #Classe Jogos
 class Jogos:
@@ -22,10 +21,14 @@ class Jogos:
         return jogos
     
     #Adiciona um jogo ao banco de dados
-    def adicionar(ano, nome, descricao, plataforma):
-        #Abre o arquivo em modo de escrita
-        with open(DB_PATH, "a", encoding="utf-8") as file:
-            #Escreve o jogo no arquivo
-            file.write(f"{ano};{nome};{descricao};{plataforma}\n")
-        return True
+    def adicionar(ano, nome, descricao, plataforma, genero, foto):
+        try:
+            data = Database(DB_PATH)
+            data.query("INSERT INTO jogos (ano_lancamento, nome, descricao, plataforma, genero, foto) VALUES (?, ?, ?, ?, ?, ?);", (ano, nome, descricao, plataforma, genero, foto))
+            data.close()
+            return True
+        except Exception as e:
+            print(e)
+            return False
+
              

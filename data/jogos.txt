@@ -1,5 +1,0 @@
-2001;Halo: Combat Evolved;Jogo de tiro em primeira pessoa com campanha épica.;Xbox
-2013;The Last of Us;Aventura e sobrevivência em um mundo pós-apocalíptico.;PlayStation
-1996;Super Mario 64;Plataforma 3D inovador com exploração aberta.;Nintendo 64
-2017;The Legend of Zelda: Breath of the Wild;Mundo aberto vasto e interativo.;Nintendo Switch
-a;a;a;a

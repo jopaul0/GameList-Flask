@@ -7,8 +7,10 @@
     <th>Nome</th>
     <th>Descrição</th>
     <th>Console</th>
-    <th>Imagem</th>  <!-- Nova coluna para Imagem -->
-    <th>Gênero</th>  <!-- Nova coluna para Gênero -->
+    <th>Imagem</th>
+    <!-- Nova coluna para Imagem -->
+    <th>Gênero</th>
+    <!-- Nova coluna para Gênero -->
   </tr>
   <tbody id="jogos-tuplas">
     {% for jogo in jogos %}
@@ -17,8 +19,17 @@
       <td>{{ jogo.nome }}</td>
       <td>{{ jogo.descricao }}</td>
       <td>{{ jogo.plataforma }}</td>
-      <td><img src="{{ jogo.foto }}" alt="Imagem do jogo" width="50" height="50"></td> <!-- Exibindo imagem -->
-      <td>{{ jogo.genero }}</td>  <!-- Exibindo gênero -->
+      <td>
+        <img
+          src="{{ jogo.foto }}"
+          alt="Imagem do jogo"
+          width="50"
+          height="50"
+        />
+      </td>
+      <!-- Exibindo imagem -->
+      <td>{{ jogo.genero }}</td>
+      <!-- Exibindo gênero -->
     </tr>
     {% endfor %}
   </tbody>
@@ -28,12 +39,28 @@
 <form action="post" id="add-jogo">
   <label for="ano">Ano:</label>
   <input type="text" id="ano" name="ano" required />
+
   <label for="nome">Nome:</label>
   <input type="text" id="nome" name="nome" required />
+
   <label for="descricao">Descrição:</label>
   <input type="text" id="descricao" name="descricao" required />
+
   <label for="plataforma">Console:</label>
   <input type="text" id="plataforma" name="plataforma" required />
+
+  <label for="genero">Gênero:</label>
+  <input type="text" id="genero" name="genero" required />
+
+  <label for="foto" class="custom-file-label">Escolher Imagem</label>
+  <input
+    type="file"
+    id="foto"
+    name="foto"
+    accept="image/*"
+  />
+  <span class="file-name">Nenhum arquivo selecionado</span>
+
   <button type="submit">Adicionar</button>
 </form>
 

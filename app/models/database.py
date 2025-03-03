@@ -1,5 +1,8 @@
 import sqlite3
 
+#Rota do banco de dados
+DB_PATH = "data/jogos.db"
+
 class Database:
     #Construtor
     def __init__(self, db_path):
@@ -11,14 +14,13 @@ class Database:
     def query(self, query, params=()):
         self.cur.execute(query, params)
     
-    # Obtém os nomes das colunas a partir de cursor.description
-        columns = [column[0] for column in self.cur.description]
+    # Se for um comando SELECT, retorna os resultados
+        if query.strip().upper().startswith("SELECT"):
+            columns = [column[0] for column in self.cur.description]
+            rows = self.cur.fetchall()
+            return [dict(zip(columns, row)) for row in rows]
     
-    # Recupera todas as linhas e cria uma lista de dicionários
-        rows = self.cur.fetchall()
-        result = [dict(zip(columns, row)) for row in rows]
-    
-        return result
+        return True
 
     
     #Salva as alterações e fecha a conexão
