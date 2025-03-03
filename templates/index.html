@@ -1,0 +1,16 @@
+{% extends "template.html" %} {% block content %}
+<div class="container">
+  {% for jogo in jogos %}
+  <div class="card">
+    <img src="{{ jogo.foto }}" alt="Imagem do jogo" />
+    <div class="info">
+      <h2>{{ jogo.nome }}</h2>
+      <p><strong>Ano:</strong> {{ jogo.ano_lancamento }}</p>
+      <p><strong>Descrição:</strong> {{ jogo.descricao }}</p>
+      <p><strong>Plataforma:</strong> {{ jogo.plataforma }}</p>
+      <p><strong>Gênero:</strong> {{ jogo.genero }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
