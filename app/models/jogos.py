@@ -15,10 +15,14 @@ class Jogos:
 
     #Lista os jogos existentes no banco de dados
     def listar():
-        data = Database(DB_PATH)
-        jogos = data.query("SELECT * FROM jogos;")
-        data.close()
-        return jogos
+        try:
+            data = Database(DB_PATH)
+            jogos = data.query("SELECT * FROM jogos;")
+            data.close()
+            return jogos
+        except Exception as e:
+            print(e)
+            return False
     
     #Adiciona um jogo ao banco de dados
     def adicionar(ano, nome, descricao, plataforma, genero, foto):

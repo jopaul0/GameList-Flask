@@ -9,17 +9,35 @@
       href="{{ url_for('static', filename='stylesheet/style.css') }}"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/login.js') }}"></script>
   </head>
   <body>
     <nav>
-      <div class="logo">Jogoteca</div>
+      <div class="logo"><a href="/">Jogoteca</a></div>
       <ul class="menu">
         <li><a href="/lista">Jogos</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="#" id="openModal">Login</a></li>
         <li><a href="/sobre">Sobre</a></li>
         <li><a href="#">Contato</a></li>
       </ul>
     </nav>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="password">Senha:</label>
+          <input type="password" id="password" name="password" required />
+
+          <button type="submit" id="entrar">Entrar</button>
+        </form>
+      </div>
+    </div>
+
     {% block content %} {% endblock %}
   </body>
 </html>

@@ -2,6 +2,7 @@ from app import app
 from app.controllers.jogos_controller import *
 from flask import render_template, request, redirect, url_for, jsonify
 
+
 @app.route("/")
 def home():
     jogos = obter_jogos()
