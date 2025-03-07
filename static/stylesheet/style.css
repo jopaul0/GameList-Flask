@@ -256,3 +256,13 @@ input[type="file"] {
 #entrar:hover {
   background-color: #0056b3;
 }
+#info-cadastro span {
+  color: rgb(97, 97, 97);
+}
+#info-cadastro a{
+  color: #007BFF;
+  text-decoration: none;
+}
+#info-cadastro a:hover{
+  color: #0056b3;
+}

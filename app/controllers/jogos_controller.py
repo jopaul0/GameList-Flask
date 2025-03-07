@@ -6,7 +6,6 @@ import os
 import uuid
 from datetime import datetime
 
-
 #Obtem os jogos
 def obter_jogos():
     return Jogos.listar()
