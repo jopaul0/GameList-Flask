@@ -17,7 +17,7 @@
       <ul class="menu">
         <li><a href="/lista">Jogos</a></li>
         <li><a href="/sobre">Sobre</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="/contato">Contato</a></li>
         {% if 'usuario' not in session %}
         <li><a href="#" id="openModal">Login</a></li>
         {% else %}
@@ -41,17 +41,19 @@
           <button type="submit" id="entrar">Entrar</button>
         </form>
         <div id="info-cadastro">
-          <span>Não tem um login? <a href="/cadastro">Faça um cadastro</a></span>
+          <span
+            >Não tem um login? <a href="/cadastro">Faça um cadastro</a></span
+          >
         </div>
       </div>
     </div>
 
     <div id="erroModal" class="modal">
       <div class="modal-content">
-          <span class="close">&times;</span>
-          <p id="mensagemLogin"></p>
+        <span class="close">&times;</span>
+        <p id="mensagemLogin"></p>
       </div>
-  </div>
+    </div>
 
     {% endif %} {% block content %} {% endblock %}
   </body>

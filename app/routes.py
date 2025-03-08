@@ -49,3 +49,17 @@ def login():
 def logout():
     session.clear()  # Limpa todos os dados da sessão
     return redirect(url_for('home'))
+
+@app.route('/editar', methods=['POST'])
+def editar():
+    response = editar_jogos()
+    return response
+
+@app.route('/excluir', methods=['POST'])
+def excluir():
+    response = excluir_jogos()
+    return response
+
+@app.route('/contato')
+def contato():
+    return render_template("contato.html")

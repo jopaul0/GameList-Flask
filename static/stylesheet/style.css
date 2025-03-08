@@ -228,11 +228,28 @@ input[type="file"] {
 
 .modal-content {
   background-color: white;
-  margin: 10% auto;
-  padding: 20px;
+  margin: 5% auto;
+  padding: 0 20px;
   border-radius: 8px;
   width: 300px;
   text-align: left;
+  max-height: 70%;
+  overflow-y: auto;
+}
+
+#jogoModal .modal-content {
+  width: 500px;
+
+}
+.headerModal {
+  position: sticky;
+  top: 0;
+  background-color: white; /* Ou outra cor que combine com seu design */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc; /* Opcional para separar do conteúdo */
+  z-index: 1000; /* Para garantir que fique acima do conteúdo */
 }
 
 .close {
@@ -265,4 +282,40 @@ input[type="file"] {
 }
 #info-cadastro a:hover{
   color: #0056b3;
+}
+
+.btn-delete{
+  background-color: rgb(224, 13, 13);
+}
+.btn-delete:hover{
+  background-color: rgb(150, 6, 6);
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  width: 80%;
+  gap: 20px;
+}
+
+.info-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 30%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.info-card p {
+  font-size: 16px;
+  text-align: center;
+  color: #555;
 }

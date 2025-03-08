@@ -1,4 +1,38 @@
 {% extends "template.html" %} {% block content %}
+<div id="jogoModal" class="modal">
+  <div class="modal-content">
+    <div class="headerModal">
+      <h1 class="titulo">Editar Jogo</h1>
+      <span class="close">&times;</span>
+      
+    </div>
+    <form id="editForm" action="post">
+      <input type="hidden" id="edit-id" name="id" />
+      <label for="edit-ano">Ano:</label>
+      <input type="text" id="edit-ano" name="ano" required />
+
+      <label for="edit-nome">Nome:</label>
+      <input type="text" id="edit-nome" name="nome" required />
+
+      <label for="edit-descricao">Descrição:</label>
+      <input type="text" id="edit-descricao" name="descricao" required />
+
+      <label for="edit-plataforma">Console:</label>
+      <input type="text" id="edit-plataforma" name="plataforma" required />
+
+      <label for="edit-genero">Gênero:</label>
+      <input type="text" id="edit-genero" name="genero" required />
+
+      <label for="edit-foto" class="custom-file-label">Escolher Imagem</label>
+      <input type="file" id="edit-foto" name="foto" accept="image/*" />
+      <span id="file-name-edit">Nenhum arquivo selecionado</span>
+
+      <button type="submit">Salvar</button>
+      <button type="button" class="btn-delete">Deletar</button>
+    </form>
+  </div>
+</div>
+
 <h1 class="titulo">🎮 Lista de Jogos</h1>
 
 <table>
@@ -14,7 +48,7 @@
   </tr>
   <tbody id="jogos-tuplas">
     {% for jogo in jogos %}
-    <tr>
+    <tr class="jogo" data-id="{{ jogo.id }}"  data-genero="{{ jogo.genero }}" data-ano="{{ jogo.ano_lancamento }}" data-nome="{{ jogo.nome }}" data-descricao="{{ jogo.descricao }}" data-plataforma="{{ jogo.plataforma }}" > 
       <td>{{ jogo.ano_lancamento }}</td>
       <td>{{ jogo.nome }}</td>
       <td>{{ jogo.descricao }}</td>
@@ -53,15 +87,11 @@
   <input type="text" id="genero" name="genero" required />
 
   <label for="foto" class="custom-file-label">Escolher Imagem</label>
-  <input
-    type="file"
-    id="foto"
-    name="foto"
-    accept="image/*"
-  />
-  <span class="file-name">Nenhum arquivo selecionado</span>
+  <input type="file" id="foto" name="foto" accept="image/*" />
+  <span id="file-name">Nenhum arquivo selecionado</span>
 
   <button type="submit">Adicionar</button>
+
 </form>
 
 <script src="{{ url_for('static', filename='scripts/jogos.js') }}"></script>
